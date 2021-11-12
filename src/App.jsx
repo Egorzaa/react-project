@@ -1,7 +1,10 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import { Message } from "./Message";
 
-function App() {
+const App = () => {
+  const name = "Vasja";
   return (
     <div className="App">
       <header className="App-header">
@@ -17,9 +20,10 @@ function App() {
         >
           Learn React
         </a>
+        <Message name={name} qwerty={""} />
       </header>
     </div>
   );
-}
+};
 
 export default App;
