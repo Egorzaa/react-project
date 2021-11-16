@@ -2,6 +2,8 @@ import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import { Message } from "./Message";
+import { Counter } from "./Components/Counter";
+import { MessageList } from "./Components/MessageList";
 
 const App = () => {
   const name = "Vasja";
@@ -20,6 +22,9 @@ const App = () => {
         >
           Learn React
         </a>
+
+        <Counter />
+        <MessageList />
         <Message name={name} qwerty={""} />
       </header>
     </div>
