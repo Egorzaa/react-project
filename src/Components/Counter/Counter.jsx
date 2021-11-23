@@ -4,7 +4,7 @@ import TextField from "@mui/material/TextField";
 import { usePrevious } from "../../Hooks/usePrevious";
 import "./styles.css";
 
-export const Counter = () => {
+export const Counter = ({ children, render }) => {
   const [count, setCount] = useState(0);
   const [text, setText] = useState("");
 
@@ -31,15 +31,21 @@ export const Counter = () => {
     <div>
       <div ref={countRef}>{count}</div>
       <div>previous {previous}</div>
-      <input value={text} onChange={handleTextChange} />
-      <TextField
-        id="standard-basic"
-        label="Standard"
-        variant="standard"
-        error
-        inputRef={inputRef}
-      />
+      <div>
+        <input value={text} onChange={handleTextChange} />
+      </div>
+      <div>
+        <TextField
+          id="standard-basic"
+          label="Standard"
+          variant="standard"
+          error
+          inputRef={inputRef}
+        />
+      </div>
       <button onClick={handleCountChange}>Click me!</button>
+      <div>{children({ color: "red" })}</div>
+      <div>{render()}</div>
     </div>
   );
 };
