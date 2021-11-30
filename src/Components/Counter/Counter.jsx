@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import TextField from "@mui/material/TextField";
 
 import { usePrevious } from "../../Hooks/usePrevious";
+import { withLoggerHOC } from "../../HOC/withLooger";
 import "./styles.css";
 
 export const Counter = ({ children, render }) => {
@@ -49,3 +50,5 @@ export const Counter = ({ children, render }) => {
     </div>
   );
 };
+
+export const CounterWithLogger = withLoggerHOC(Counter);

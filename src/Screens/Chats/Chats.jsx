@@ -1,4 +1,4 @@
-import { Redirect, useHistory, useParams } from "react-router-dom";
+import { Redirect, useParams } from "react-router-dom";
 import { ROUTES } from "../../Router/constants";
 
 export const Chats = ({ chatList }) => {

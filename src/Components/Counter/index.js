@@ -1,3 +1,3 @@
-import { Counter } from "./Counter";
+import { Counter, CounterWithLogger } from "./Counter";
 
-export { Counter };
+export { Counter, CounterWithLogger };

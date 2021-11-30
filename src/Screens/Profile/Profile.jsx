@@ -1,11 +1,19 @@
-import { useHistory } from "react-router-dom";
-import { ROUTES } from "../../Router/constants";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleUserNameAction } from "../../Store/Profile/actions";
+import { profileSelector } from "../../Store/Profile/selectors";
 
 export const Profile = () => {
-  const history = useHistory();
+  const dispatch = useDispatch();
+  const { name, showName } = useSelector(profileSelector);
 
-  const handleClick = () => {
-    history.push(ROUTES.HOME);
+  const handleToggleShowName = () => {
+    dispatch(toggleUserNameAction());
   };
-  return <button onClick={handleClick}>profile page</button>;
+
+  return (
+    <>
+      <button onClick={handleToggleShowName}>Click me!</button>
+      {showName && name}
+    </>
+  );
 };
