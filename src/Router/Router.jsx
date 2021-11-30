@@ -29,7 +29,9 @@ export const Router = () => {
         <Route exact path={ROUTES.CHATS}>
           <Chats chatList={chatList} />
         </Route>
-        <Route exact path={ROUTES.PROFILE} component={Profile} />
+        <Route exact path={ROUTES.PROFILE}>
+          <Profile dummy />
+        </Route>
         <Route exact path={ROUTES.HOME} render={() => <Home />} />
         <Route exact path={ROUTES.NO_CHAT}>
           no chat content

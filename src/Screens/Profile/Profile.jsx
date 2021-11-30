@@ -1,5 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
-import { toggleUserNameAction } from "../../Store/Profile/actions";
+import {
+  changeUserNameAction,
+  toggleUserNameAction,
+} from "../../Store/Profile/actions";
 import { profileSelector } from "../../Store/Profile/selectors";
 
 export const Profile = () => {
@@ -10,8 +13,13 @@ export const Profile = () => {
     dispatch(toggleUserNameAction());
   };
 
+  const handleNameChange = (e) => {
+    dispatch(changeUserNameAction({ name: e.target.value }));
+  };
+
   return (
     <>
+      <input value={name} onChange={handleNameChange} />
       <button onClick={handleToggleShowName}>Click me!</button>
       {showName && name}
     </>

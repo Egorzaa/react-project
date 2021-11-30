@@ -1,6 +1,8 @@
 import { useContext } from "react";
+import { useSelector } from "react-redux";
 import { Counter, CounterWithLogger } from "../../Components/Counter";
 import { MessageList } from "../../Components/MessageList";
+import { profileSelector } from "../../Store/Profile/selectors";
 import { Message } from "../../Message";
 import logo from "../../logo.svg";
 import { MyContext } from "../../App";
@@ -12,11 +14,13 @@ export const Home = () => {
 
   const { theme } = useContext(MyContext);
 
-  console.log(theme);
+  const { name: userName } = useSelector(profileSelector);
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+        <h1>{userName}</h1>
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
