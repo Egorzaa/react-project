@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
+import { addMessageWithThunk } from "../../Store/Messages/actions";
 import {
   changeUserNameAction,
   toggleUserNameAction,
@@ -11,6 +12,13 @@ export const Profile = () => {
 
   const handleToggleShowName = () => {
     dispatch(toggleUserNameAction());
+    dispatch(
+      addMessageWithThunk({
+        chatId: "id1",
+        message: "some text",
+        author: "Egor",
+      })
+    );
   };
 
   const handleNameChange = (e) => {
