@@ -5,6 +5,7 @@ import { combineReducers, createStore, compose, applyMiddleware } from "redux";
 import { chatsReducer } from "./Chats/reducer";
 import { messagesReducer } from "./Messages/reducer";
 import { profileReducer } from "./Profile/reducer";
+import { dogReducer } from "./Dog/reducer";
 import { middleware } from "../Middlewares";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -18,6 +19,7 @@ const rootReducer = combineReducers({
   profile: profileReducer,
   chats: chatsReducer,
   messages: messagesReducer,
+  dog: dogReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

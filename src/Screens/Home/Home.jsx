@@ -1,18 +1,14 @@
-import { useContext } from "react";
 import { useSelector } from "react-redux";
-import { Counter, CounterWithLogger } from "../../Components/Counter";
+import { CounterWithLogger } from "../../Components/Counter";
 import { MessageList } from "../../Components/MessageList";
 import { profileSelector } from "../../Store/Profile/selectors";
 import { Message } from "../../Message";
 import logo from "../../logo.svg";
-import { MyContext } from "../../App";
 
 import "./Home.css";
 
 export const Home = () => {
   const name = "Vasja";
-
-  const { theme } = useContext(MyContext);
 
   const { name: userName } = useSelector(profileSelector);
 
